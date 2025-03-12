@@ -12,6 +12,7 @@ public class Switch {
             break;
             case 18: System.out.println("You finished the school");
             break;
+            default: System.out.println("You are not 0, 7 or 18");//если ни один из предыдущих кейсов не выполнился
         }
     }
 }
