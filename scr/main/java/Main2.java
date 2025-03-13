@@ -9,8 +9,14 @@ public class Main2 {
         String name = sc.nextLine();
 
         //присвоить это имя классу Hello
-        Hello username = new Hello();
-        username.setName("Anna");
+        Hello hello = new Hello();
+        hello.setName(name);
+
+        hello.welcome();
+
+        System.out.println("Hello, World!");
+
+        hello.byeBay();
 
     }
 }

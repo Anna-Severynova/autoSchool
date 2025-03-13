@@ -7,11 +7,11 @@ public class Hello {
     public void setName(String username) { //
         this.name = username;
     }
-    void welcome(){
+    public void welcome(){
         System.out.println("Welcome "+name);
     }
 
-    void byeBay(){
+    public void byeBay(){
         System.out.println("Bye "+name);
     }
 }
