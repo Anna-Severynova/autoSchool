@@ -10,10 +10,7 @@ public class Main2 {
 
         //присвоить это имя классу Hello
         Hello username = new Hello();
-        username.setName(String username);
-
-        username.welcome();
-        username.byBye();
+        username.setName("Anna");
 
     }
 }
