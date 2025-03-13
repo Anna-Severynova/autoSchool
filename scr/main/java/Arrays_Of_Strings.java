@@ -16,15 +16,19 @@ public class Arrays_Of_Strings {
         }
         System.out.println();
 
-        for (String str : strings) { // тип данных, переменная, массив через который хотим проходить
+        // тип данных, переменная, массив через который хотим проходить
+        for (String str : strings) {
             System.out.println(str);
         }
-        System.out.println();
+
 
         //посчитать сумму массива
         int[] numbers2 = {8,2,3,4,5};
+        int sum = 0;
         for (int n : numbers2){
-            System.out.println(n);
+            sum=sum+n;
         }
+        System.out.println();
+        System.out.println(sum);
     }
 }
