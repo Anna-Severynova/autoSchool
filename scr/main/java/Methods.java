@@ -33,9 +33,9 @@ class Person1 {
     // создаем метод для того, чтобы человек представился
     void speak(){
         // вывести приветствие 3 раза
-        for (int i=0; i<4; i++){
+        //for (int i=0; i<4; i++){
             System.out.println("My name is " + name + "," + "and age is " + age);
-        }
+        //}
     }
 
     void sayHello(){
