@@ -1,4 +1,4 @@
-package autoSchool;
+package autoSchool.loops;
 
 public class WhileLoops {
     public static void main(String[] args) {

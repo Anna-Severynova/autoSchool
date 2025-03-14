@@ -1,4 +1,4 @@
-package autoSchool;
+package autoSchool.arrays;
 
 public class Multidimensional_arrays {
     public static void main(String[] args) {
