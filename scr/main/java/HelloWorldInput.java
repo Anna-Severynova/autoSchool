@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class HelloWorldInput {
     public static void main(String[] args) {
         printHelloName();
+
     }
     public static void printHelloName() {
        Scanner sc = new Scanner(System.in);
