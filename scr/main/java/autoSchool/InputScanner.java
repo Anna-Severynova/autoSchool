@@ -1,3 +1,5 @@
+package autoSchool;
+
 import java.util.Scanner;
 
 public class InputScanner {

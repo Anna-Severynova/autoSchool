@@ -1,3 +1,5 @@
+package autoSchool;
+
 public class Multidimensional_arrays {
     public static void main(String[] args) {
         int [][] matrice = {{1,2,3,4,5},

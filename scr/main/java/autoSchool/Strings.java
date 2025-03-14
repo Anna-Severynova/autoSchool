@@ -1,3 +1,5 @@
+package autoSchool;
+
 public class Strings {
     public static void main(String[] args){
         int x = 5;

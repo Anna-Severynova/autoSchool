@@ -1,3 +1,5 @@
+package autoSchool;
+
 public class Arrays_Of_Strings {
     public static void main(String[] args) {
         int[] numbers = new int[5];
