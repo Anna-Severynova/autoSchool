@@ -1,4 +1,4 @@
-package autoSchool.loops;
+package autoSchool.loops_operators;
 
 public class ForLoop {
     public static void main(String[] args) {

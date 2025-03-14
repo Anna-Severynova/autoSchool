@@ -1,4 +1,4 @@
-package autoSchool.loops;
+package autoSchool.loops_operators;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package autoSchool;
+package autoSchool.loops_operators;
 
 public class Break_Continue {
     public static void main(String[] args) {
