@@ -10,7 +10,7 @@ public class Main {
         // System.out.println("21 / 8 =" + " " + "целое число: " + calculate.getQ() + " остаток: " + calculate.getW());
 
         Task2 calculate2 = new Task2();
-        calculate2.getScan();
+        //calculate2.getScan();
         calculate2.setDigits(calculate2.getScan());
         System.out.println("Amount of the 2-digit numbers is: "+calculate2.getSum());
 
