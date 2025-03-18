@@ -7,37 +7,37 @@ public class Task4 {
     int b;
     int c;
 
-    public int getScanNum(){
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter an number: ");
-        this.a = scan.nextInt();
+    public int getScan2(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter an 'a': ");
+        a = sc.nextInt();
         return a;
     }
-    public int getScanNum2(){
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter an number_1: ");
-        this.b = scan.nextInt();
+    public int getScan3(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter an 'b': ");
+        b = sc.nextInt();
         return b;
     }
-    public int getScanNum3(){
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter an number_1: ");
-        this.c = scan.nextInt();
+    public int getScan4(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter an 'c': ");
+        c = sc.nextInt();
         return c;
     }
 
     public int getSumAB(){
-        this.a = a + b;
-        return a;
+        int num1 = a + b;
+        return num1;
     }
 
     public int getSubCA(){
-        this.b = c - a;
-        return b;
+        int num2 = c - a;
+        return num2;
     }
 
     public int getSumABC(){
-        this.c = a+b+c;
-        return c;
+        int num3 = a + b + c;
+        return num3;
     }
 }
