@@ -1,6 +1,6 @@
-package typeConversionsPracticalTask;
+package typeConversionsPracticalTask.calculate;
 
-class Task1{
+public class Task1{
     private int q;
    private int w;
     private int a; // результат (целое число)
