@@ -1,8 +1,7 @@
 package typeConversionsPracticalTask.calculate;
 
 public class Task1{
-    private int q;
-   private int w;
+    private int q;private int w;
     private int a; // результат (целое число)
     private int b; // результат (число после точки)
     private double result;
