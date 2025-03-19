@@ -6,26 +6,23 @@ import typeConversionsPracticalTask.calculate.Task3;
 import typeConversionsPracticalTask.calculate.Task4;
 
 public class Main {
-    // Task1 calculate = new Task1();
-    //Task2 calculate2 = new Task2();
-    // Task3 calculate3 = new Task3();
-    Task4 calculate4 = new Task4();
+
     public static void main(String[] args) {
 
-        Task4 calculate4 = new Task4();
+        // Task1 calculate = new Task1();
         // calculate.setResult(21, 8);
         // System.out.println("21 / 8 =" + " " + "целое число: " + calculate.getQ() + " остаток: " + calculate.getW());
 
-
+        //Task2 calculate2 = new Task2();
         // calculate2.getScan();
         // calculate2.setDigits(calculate2.getScan());
         // System.out.println("Amount of the 2-digit numbers is: "+calculate2.getSum());
 
-
+        // Task3 calculate3 = new Task3();
         // calculate3.setNumber1(calculate3.getScan1());
         // System.out.println(calculate3.getRound());
 
-
+        Task4 calculate4 = new Task4();
         calculate4.getScan2();
         calculate4.getScan3();
         calculate4.getScan4();
