@@ -1,9 +1,9 @@
-// У класса могут быть:
+package autoSchool;// У класса могут быть:
 // Данные (ПОЛЯ)
 // Действия, которые он может совершать (МЕТОДЫ)
 
 public class ClassesAndObjects {
-    // создадим несколько конкретных Person
+    // создадим несколько конкретных autoSchool.Person
     public static void main(String[] args) {
         Person person = new Person();
         person.name = "Joe";
