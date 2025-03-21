@@ -11,7 +11,6 @@ public class Task2 {
     public int getScan(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the 2-digit number: ");
-        //int num = sc.nextInt();
         return sc.nextInt();
     }
 
