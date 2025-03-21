@@ -24,17 +24,14 @@ public class Task4 {
     }
 
     public int getSumAB(){
-        int num1 = a + b;
-        return num1;
+        return a + b;
     }
 
     public int getSubCA(){
-        int num2 = c - a;
-        return num2;
+        return c - a;
     }
 
     public int getSumABC(){
-        int num3 = a + b + c;
-        return num3;
+        return a + b + c;
     }
 }

@@ -7,17 +7,17 @@ public class Task3 {
     int round;
 
 
-    public double getScan1(){
+    public double getScan1() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter a number of the type X.X: ");
         return scan.nextDouble();
     }
 
-    public int setNumber1(double number) {
+    public void setNumber1(double number) {
         this.number = number;
-        this.round = (int)Math.round(number);
-        return round;
+        this.round = (int) Math.round(number);
     }
+
     public int getRound() {
         return round;
     }
