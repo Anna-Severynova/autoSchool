@@ -10,8 +10,7 @@ public class Task3 {
     public double getScan1(){
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter a number of the type X.X: ");
-        double numb = scan.nextDouble();
-        return numb;
+        return scan.nextDouble();
     }
 
     public int setNumber1(double number) {
