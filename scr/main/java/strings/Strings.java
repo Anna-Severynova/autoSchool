@@ -4,7 +4,7 @@ public class Strings {
     String middle = "Hello, World. Hello, Java!";
     public static void main(String[] args) {
         String str = "Hello, World. Hello, Java!";
-        String str1 = new String (new char[]{"Hello", })
+
 
         str = str.toLowerCase();
 
