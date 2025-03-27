@@ -1,20 +1,34 @@
 package arraysPracticalTypes;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class Task2 {
     public static void main(String[] args) {
+        String[] strings = initializeArray();
+        System.out.println("Your string array: " + Arrays.toString(strings));
+
+        System.out.println("Reverse array: "+Arrays.asList(reverseArray(strings)));
+    }
+
+    public static String[] initializeArray() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter an 8 strings: ");
-        String s = sc.nextLine();
+        System.out.println("Enter 8 Strings:");
 
-        String[] strings = new String[10];
+        int num = 10;
+        String[] arr = new String[num]; // проинициализировали массив строк
         for (int i = 0; i < 8; i++) {
-            strings[i] = sc.nextLine();
+            arr[i] = sc.nextLine();
         }
+        return arr;
+    }
 
-System.out.println(Arrays.toString(strings));
-        System.out.println("Reverse array: ");
+    public static String[] reverseArray(String[] arr) {
+
+        Collections.reverse(Arrays.asList(arr));
+        return arr;
     }
 }
+
