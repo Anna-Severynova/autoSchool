@@ -14,6 +14,7 @@ public class Task1 {
 
         for (int i = 0; i < arr.length; i++) { // переменную i используем как индекс массива
             arr[i] = sc.nextInt();
+           // System.out.println(arr[i]);
             if (arr[i] > maxNum) {
                 maxNum = arr[i];
             }
