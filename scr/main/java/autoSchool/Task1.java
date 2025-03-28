@@ -2,7 +2,7 @@ package autoSchool;
 
 import java.util.Scanner;
 
-public class InputScanner {
+public class Task1 {
     public static void main(String[] args) {
 
         String s = "hello"; // так можно создать Объект Класса String
