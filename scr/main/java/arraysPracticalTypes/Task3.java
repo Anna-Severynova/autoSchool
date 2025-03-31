@@ -17,7 +17,6 @@ public class Task3 {
             arrNum[i] = array[i].length();
             System.out.println(arrNum[i]);
         }
-
     }
 }
 
