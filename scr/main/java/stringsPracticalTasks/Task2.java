@@ -1,4 +1,4 @@
-package strings;
+package stringsPracticalTasks;
 
 import java.util.Scanner;
 
