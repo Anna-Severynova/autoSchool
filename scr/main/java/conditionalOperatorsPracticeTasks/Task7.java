@@ -14,6 +14,7 @@ public class Task7 {
         System.out.println("Enter the 7 numbers (from 0 to 20): ");
 
         boolean guessed = false;
+
         for (int i = 0; i < 7; i++) {
             int num = sc.nextInt();
 

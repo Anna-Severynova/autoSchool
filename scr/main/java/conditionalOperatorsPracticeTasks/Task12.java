@@ -10,7 +10,7 @@ public class Task12 {
             while(num2<=10){
                 count = num*num2;
                 System.out.print(count+" ");
-                num2++; // 2
+                num2++;
             }
             System.out.println();
             num++;
