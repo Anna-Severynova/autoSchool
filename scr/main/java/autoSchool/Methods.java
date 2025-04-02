@@ -50,7 +50,7 @@ class Person1 {
     }
 
     int calculateYearsToRetirement(){
-        int years = 65-age;
+        this.years = 65-age;
         return years;
     }
 
