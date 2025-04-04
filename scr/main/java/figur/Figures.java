@@ -7,7 +7,11 @@ public abstract class Figures {
         this.name = name;
     }
 
-    public abstract void coordinates();
+    public String getName() {
+        return name;
+    }
+
+    public abstract double coordinates();
     public abstract double area();
 
 
