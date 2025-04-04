@@ -10,10 +10,10 @@ public class Square extends Figures {
     }
 
     @Override
-    public double coordinates() {
+    public void coordinates() {
         Random random = new Random();
         x = random.nextInt(20 + 1);
-        return x;
+       // return x;
     }
     public double getCoordinates(){
         return x;

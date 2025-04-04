@@ -11,10 +11,9 @@ public class Circle extends Figures {
     }
 
     @Override
-    public double coordinates() {
+    public void coordinates() {
         Random randomRadius = new Random();
         radius = randomRadius.nextInt(20+1);
-        return radius;
     }
 
     public double getCoordinates(){

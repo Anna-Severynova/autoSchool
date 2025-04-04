@@ -11,7 +11,7 @@ public abstract class Figures {
         return name;
     }
 
-    public abstract double coordinates();
+    public abstract void coordinates();
     public abstract double area();
 
 

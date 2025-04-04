@@ -13,12 +13,12 @@ public class Triangle extends Figures {
     }
 
     @Override
-    public double coordinates() {
-        this.a=5;
-        this.b=2;
-        this.c=5;
+    public void coordinates() {
+        Random random = new Random();
+        this.a= random.nextDouble(20+1);
+        this.b= random.nextDouble(20+1);
+        this.c= random.nextDouble(20+1);
         this.pp = (this.a + this.b + this.c) / 2;
-        return pp;
     }
 
     public double getCoordinates(){
