@@ -3,7 +3,7 @@ package figur;
 import java.util.Random;
 
 public class Square extends Figures {
-    private double x;
+    private int x;
 
     public Square(String name) {
         super(name);
@@ -12,18 +12,18 @@ public class Square extends Figures {
     @Override
     public void coordinates() {
         Random random = new Random();
-        x = random.nextInt(20 + 1);
-       // return x;
-    }
-    public double getCoordinates(){
-        return x;
+        do {
+            x = random.nextInt(20 + 1);
+        }
+        while (!isZero());
     }
 
+    public boolean isZero() {
+        return x != 0;
+    }
 
     @Override
-    public double area() {
-        double area;
-        area = this.x * this.x;
-        return area;
+    public int area() {
+        return this.x * this.x;
     }
 }

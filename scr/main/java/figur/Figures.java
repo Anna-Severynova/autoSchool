@@ -12,9 +12,7 @@ public abstract class Figures {
     }
 
     public abstract void coordinates();
-    public abstract double area();
-
-
+    public abstract int area();
 }
 
 

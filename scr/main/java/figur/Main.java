@@ -9,7 +9,7 @@ public class Main {
         Figures[] arrShape = new Figures[10];
         Random shapes = new Random(3);
 
-        for (int i = 0; i < arrShape.length; i++) { // массив для заполнения фигурами+методы
+        for (int i = 0; i < arrShape.length; i++) { // массив для заполнения фигурами+методы(рандом коордитат и вычисление площади)
 
             int type = shapes.nextInt(3); // 0 - круг, 1 - квадрат, 2 - треугольник
 
@@ -30,7 +30,7 @@ public class Main {
         for (int i = 0; i < arrShape.length; i++) { // вывод уже отсортированного массива
             Figures f = arrShape[i];
             String parameters = f.getName();
-            double area = f.area();
+            int area = f.area();
             System.out.println("name of the shape: " + parameters + ", " + "area: " + area);
             System.out.println();
         }

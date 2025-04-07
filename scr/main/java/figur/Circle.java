@@ -3,8 +3,7 @@ package figur;
 import java.util.Random;
 
 public class Circle extends Figures {
-    private double radius;
-    private double area;
+    private int radius;
 
     public Circle(String name) {
         super(name);
@@ -13,17 +12,18 @@ public class Circle extends Figures {
     @Override
     public void coordinates() {
         Random randomRadius = new Random();
-        radius = randomRadius.nextInt(20+1);
+        do{
+        radius = randomRadius.nextInt(20+1);}
+        while (!isZero());
     }
 
-    public double getCoordinates(){
-        return radius;
+    public boolean isZero(){
+        return radius!=0;
     }
 
     @Override
-    public double area() {
-        double area = radius*radius*Math.PI;
-        return area;
+    public int area() {
+        return (int) (radius*radius*Math.PI);
     }
 }
 

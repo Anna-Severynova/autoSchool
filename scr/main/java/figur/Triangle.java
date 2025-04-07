@@ -3,9 +3,9 @@ package figur;
 import java.util.Random;
 
 public class Triangle extends Figures {
-    private double a;
-    private double b;
-    private double c;
+    private int a;
+    private int b;
+    private int c;
     private double pp;
 
     public Triangle(String name) {
@@ -15,18 +15,23 @@ public class Triangle extends Figures {
     @Override
     public void coordinates() {
         Random random = new Random();
-        this.a= random.nextDouble(20+1);
-        this.b= random.nextDouble(20+1);
-        this.c= random.nextDouble(20+1);
-        this.pp = (this.a + this.b + this.c) / 2;
+do{
+        this.a= random.nextInt(20+1);
+        this.b= random.nextInt(20+1);
+        this.c= random.nextInt(20+1);
+        this.pp = (this.a + this.b + this.c) / 2.0;}
+while (!isTriangle()||!isZero());
     }
 
-    public double getCoordinates(){
-        return pp;
+    public boolean isTriangle(){
+            return a+b>c&&a+c>b&&c+b>a;
+    }
+    public boolean isZero(){
+        return a!=0&&b!=0&&c!=0;
     }
 
     @Override
-    public double area() {
-        return Math.sqrt(pp * (pp - a) * (pp - b) * (pp - c));
+    public int area() {
+        return (int) Math.sqrt(pp * (pp - a) * (pp - b) * (pp - c));
     }
 }
