@@ -1,0 +1,45 @@
+package arraysPracticalTypes;
+
+import java.util.Scanner;
+
+public class Task33 {
+    public static void main(String[] args) {
+        String [] arrString = createStringArr(); // здесь создаем строковый массив (arrString) на 5 элементов
+        fillStringArr(arrString); // заполняем массив (arrString) строками с клавиатуры
+        int [] arrInt = createIntArr(); // создаем интовый массив arrInt на 5 элементов
+        sizeOfStrings(arrString, arrInt); // записываем длинну строк из массива arrString на 5 элементов в массив arrInt на 5 элементов
+        printIntArray(arrInt); // выводим массив с числами длинны каждой строки
+    }
+
+    public static String[] createStringArr() {
+        return new String[5];
+    }
+
+    public static int [] createIntArr(){
+        return new int[5];
+    }
+
+    public static void fillStringArr(String[]arrStr){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter 5 strings:");
+
+        for (int i = 0; i< arrStr.length; i++){
+            arrStr[i] = sc.nextLine();
+        }
+    }
+
+    public static void sizeOfStrings(String[]arrString, int[]arrInt){
+
+        for(int i = 0; i < arrString.length; i++){
+            arrInt[i]=arrString[i].length();
+            }
+        }
+
+        public static void printIntArray(int [] intArr){
+                  for(int i = 0; i < intArr.length; i++){
+                      System.out.println(intArr[i]);
+                  }
+        }
+
+    }
+
