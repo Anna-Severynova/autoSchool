@@ -1,17 +1,11 @@
-package arraysPracticalTypes;
-
-import java.util.Arrays;
+package arraysPracticalTypes.review;
 import java.util.Scanner;
 
 public class Task22 {
     public static void main(String[] args) {
-        String[] arr1 = createStringArr();
+        String[] arr1 = new String[5];
         fillStrings(arr1);
         stringOutput(arr1);
-    }
-
-    public static String[] createStringArr() {
-        return new String[5];
     }
 
     public static void fillStrings(String[] arr) {

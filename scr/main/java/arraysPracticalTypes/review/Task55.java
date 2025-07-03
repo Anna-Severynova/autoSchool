@@ -1,24 +1,15 @@
-package arraysPracticalTypes;
+package arraysPracticalTypes.review;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Task55 {
     public static void main(String[] args) {
-        int[] arrBig = createArrBig();
-        int[] arrSmall1 = createArrSmall();
-        int[] arrSmall2 = createArrSmall();
+        int[] arrBig = new int[20];
+        int[] arrSmall1 = new int[10];
+        int[] arrSmall2 = new int[10];
         fillBigArr(arrBig);
         divideBigArr(arrBig, arrSmall1, arrSmall2);
-        printSmallArr2(arrSmall2);
-    }
-
-    public static int[] createArrBig() {
-        return new int[20];
-    }
-
-    public static int[] createArrSmall() {
-        return new int[10];
     }
 
     public static void fillBigArr(int[] arr) {
@@ -36,11 +27,6 @@ public class Task55 {
             arrSmall1[i] = arrBig[i];
             arrSmall2[i] = arrBig[i + 10];
         }
-    }
-
-    public static void printSmallArr2(int[]arr){
-        for (int i = 0; i<arr.length; i++){
-            System.out.println(arr[i]);
-        }
+        System.out.println(Arrays.toString(arrSmall2));
     }
 }

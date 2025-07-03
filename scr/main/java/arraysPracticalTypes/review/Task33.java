@@ -1,4 +1,4 @@
-package arraysPracticalTypes;
+package arraysPracticalTypes.review;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -11,7 +11,7 @@ public class Task33 {
         sizeOfStrings(arrString, arrInt); // записываем длинну строк из массива arrString на 5 элементов в массив arrInt на 5 элементов
     }
 
-    public static void fillStringArr(String[]arrStr) {
+    public static void fillStringArr(String[] arrStr) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter 5 strings:");
 
@@ -25,7 +25,6 @@ public class Task33 {
         for (int i = 0; i < arrString.length; i++) {
             arrInt[i] = arrString[i].length();
         }
-
         System.out.println(Arrays.toString(arrInt));
     }
 }

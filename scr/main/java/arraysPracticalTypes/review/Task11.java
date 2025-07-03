@@ -1,6 +1,4 @@
-package arraysPracticalTypes;
-
-import java.util.Arrays;
+package arraysPracticalTypes.review;
 import java.util.Scanner;
 
 public class Task11 {
@@ -8,7 +6,6 @@ public class Task11 {
         int [] array = createArray();
         int number = max(array);
         System.out.println(number);
-
     }
 
     public static int [] createArray(){
