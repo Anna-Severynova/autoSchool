@@ -5,14 +5,13 @@ import java.util.Scanner;
 
 public class Task11 {
     public static void main (String [] args){
-        int [] array = initializeArray();
-        System.out.println(Arrays.toString(array)); //???
+        int [] array = createArray();
         int number = max(array);
         System.out.println(number);
 
     }
 
-    public static int [] initializeArray(){
+    public static int [] createArray(){
         int [] arr = new int [5];
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter 5 numbers:");
