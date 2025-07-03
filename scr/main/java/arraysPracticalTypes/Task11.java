@@ -1,21 +1,37 @@
 package arraysPracticalTypes;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Task11 {
     public static void main (String [] args){
-        initializeArray();
-        System.out.println(initializeArray());
+        int [] array = initializeArray();
+        System.out.println(Arrays.toString(array)); //???
+        int number = max(array);
+        System.out.println(number);
 
     }
 
     public static int [] initializeArray(){
+        int [] arr = new int [5];
         Scanner sc = new Scanner(System.in);
-        int [] arr = new int [20];
+        System.out.println("Enter 5 numbers:");
 
         for(int i = 0; i< arr.length; i++){
+            int numbers = sc.nextInt();
             arr[i] = numbers;
         }
         return arr;
+    }
+
+    public static int max (int[] arr){
+        int maxNum = 0;
+
+        for(int i = 0; i<arr.length; i++){
+            if (arr[i] > maxNum){
+                maxNum = arr[i];
+            }
+        }
+        return maxNum;
     }
 }
