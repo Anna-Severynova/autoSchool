@@ -7,12 +7,12 @@ public class Task114 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter m-number:");
         int m = sc.nextInt();
-        int i = 0; // счетчик для количества строк
+        //int i = 0; // счетчик для количества строк
         System.out.println("Enter n-number");
         int n = sc.nextInt();
-        int j = 0; // счетчик для количества элементов в строке
-        for (i = m; i > 0; i--) {
-            for (j = n; j > 0; j--) {
+        //int j = 0; // счетчик для количества элементов в строке
+        for (int i = m; i > 0; i--) {
+            for (int j = n; j > 0; j--) {
                 System.out.print("8");
             }
             System.out.println();

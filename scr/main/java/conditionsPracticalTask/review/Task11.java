@@ -17,6 +17,6 @@ public class Task11 {
         } else {
             System.out.println("The numbers is equal");
         }
-        System.out.println("The max number is " + minNum);
+        System.out.println("The min number is " + minNum);
     }
 }
