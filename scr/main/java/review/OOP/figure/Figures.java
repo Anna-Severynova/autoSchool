@@ -8,7 +8,7 @@ public abstract class Figures {
         this.figureName = figureName;
         this.coordinates = coordinates;
     }
-
+//
     public String getFigureName(){ // function to get name
         return figureName;
     }

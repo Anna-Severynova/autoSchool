@@ -12,4 +12,8 @@ public class Circle extends Figures {
     public double calculateArea(){
         return 3.14 * (radius * radius);
     }
+
+    public int getRadius(){
+        return radius;
+    }
 }
