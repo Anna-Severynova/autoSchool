@@ -10,7 +10,10 @@ public class Circle extends Figures {
 
     @Override
     public double calculateArea() {
-        System.out.println("Side of the Square: " + radius);
         return 3.14 * (radius * radius);
+    }
+
+    public String getParams() {
+        return "Side = " + radius;
     }
 }

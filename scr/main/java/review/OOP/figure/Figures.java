@@ -13,9 +13,11 @@ public abstract class Figures {
         return figureName;
     }
 
-    public int[] getCoordinates() { //function to get coordinates
+    public int[] getCoordinates() {
         return coordinates;
     }
+
+    public abstract String getParams();
 
     public abstract double calculateArea(); // area calculation function
 }

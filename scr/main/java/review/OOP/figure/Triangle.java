@@ -12,8 +12,9 @@ public class Triangle extends Figures {
 
     @Override
     public double calculateArea() {
-        System.out.println("Base of the Triangle: " + base);
-        System.out.println("Height of the Triangle: " + height);
         return 0.5 * base * height;
+    }
+    public String getParams() {
+        return "Base = " + base+" & " + "Height = "+ height;
     }
 }

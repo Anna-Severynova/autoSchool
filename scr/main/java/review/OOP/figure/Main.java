@@ -1,5 +1,7 @@
 package review.OOP.figure;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Random;
 
 public class Main {
@@ -24,8 +26,17 @@ public class Main {
                 figures[i] = new Triangle("Triangle", coords, randomBase, randomHeight);
 
             }
-            System.out.println("Name of the shape: " + figures[i].getFigureName());
-            System.out.println("Area = " + figures[i].calculateArea());
+        }
+        Arrays.sort(figures, Comparator.comparingDouble(Figures::calculateArea));
+        System.out.println();
+        System.out.println("Sorted figures by area: ");
+        System.out.println();
+
+        for (Figures figure : figures) {
+            System.out.println("Name of the shape: " + figure.getFigureName());
+            System.out.println("Coordinates: " + Arrays.toString(figure.getCoordinates()));
+            System.out.println(figure.getParams());
+            System.out.println("Area = " + figure.calculateArea());
             System.out.println();
         }
     }

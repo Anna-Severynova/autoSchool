@@ -10,7 +10,10 @@ public class Square extends Figures {
 
     @Override
     public double calculateArea() {
-        System.out.println("Side of the square: " + side);
         return side * side;
+    }
+
+    public String getParams() {
+        return "Side = " + side;
     }
 }
