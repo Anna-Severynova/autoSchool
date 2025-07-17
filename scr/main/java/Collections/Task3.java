@@ -5,7 +5,9 @@ import java.util.Map;
 
 public class Task3 {
     public static void main(String[] args) {
+
         Map<Cat, String> mapCats = new HashMap<>();
+
         mapCats.put(new Cat("Barsik"), "cat");
         mapCats.put(new Cat("Murzik"), "cat");
         mapCats.put(new Cat("Bonya"), "cat");

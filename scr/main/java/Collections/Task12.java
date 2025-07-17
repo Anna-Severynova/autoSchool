@@ -5,7 +5,9 @@ import java.util.Set;
 
 public class Task12 {
     public static void main(String [] args){
+
         Set<String> stringSet = new HashSet<>();
+
         stringSet.add("Luck");
         stringSet.add("Love");
         stringSet.add("Lost");

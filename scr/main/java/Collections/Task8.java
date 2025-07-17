@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class Task8 {
     public static void main(String[] args) {
+
         List<String> stringList = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter 5 strings: ");

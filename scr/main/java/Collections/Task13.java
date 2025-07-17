@@ -6,6 +6,7 @@ import java.util.Set;
 
 public class Task13 {
     public static void main(String[] args) {
+
         Set<Integer> intSet = new HashSet<>();
 
         intSet.add(12);

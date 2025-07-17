@@ -5,6 +5,7 @@ import java.util.Map;
 
 public class Task6 {
     public static void main(String[] args) {
+
         Map<String, Object> map = new HashMap<>();
 
         map.put("Test", 1);

@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Task17 {
     public static void main(String[] args) {
-        
+
         Map<String, String> mapOfNames = new HashMap<>();
 
         mapOfNames.put("Osipenko", "Maksim");

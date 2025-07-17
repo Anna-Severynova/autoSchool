@@ -5,7 +5,9 @@ import java.util.List;
 
 public class Task7 {
     public static void main (String [] args){
+
         List<String> list = new ArrayList<String>();
+
         list.add("Test");
         list.add("Test1");
         list.add("Test11");
