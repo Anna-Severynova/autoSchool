@@ -9,7 +9,7 @@ public class Task12 {
         stringSet.add("Luck");
         stringSet.add("Love");
         stringSet.add("Lost");
-        stringSet.add("Left");
+        stringSet.add("Lost");
         stringSet.add("Lock");
         stringSet.add("Laugh");
         stringSet.add("Live");
