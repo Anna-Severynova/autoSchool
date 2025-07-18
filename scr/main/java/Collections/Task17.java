@@ -19,9 +19,9 @@ public class Task17 {
         mapOfNames.put("Vasilenko", "Olena");
         mapOfNames.put("Vasilenko", "Pavel");
 
-        for (Map.Entry<String, String> i : mapOfNames.entrySet()) {
-            String key = i.getKey();
-            String value = i.getValue();
+        for (Map.Entry<String, String> keyAndValues : mapOfNames.entrySet()) {
+            String key = keyAndValues.getKey();
+            String value = keyAndValues.getValue();
             System.out.println(key + " - " + value);
         }
     }
