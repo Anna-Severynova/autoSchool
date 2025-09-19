@@ -28,6 +28,10 @@ public class Task8 {
                 arrForMaxElement.add(str);
             }
         }
-        System.out.println("The longest string(s): " + arrForMaxElement);
+        System.out.println("The longest string(s): ");
+
+        for (String str: arrForMaxElement){
+            System.out.println(str);
+        }
     }
 }

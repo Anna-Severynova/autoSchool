@@ -16,8 +16,8 @@ public class Task7 {
 
         System.out.println("Size of array: " + list.size());
 
-        for(String str: list){
-            System.out.println(str);
+        for(String outputList : list){
+            System.out.println(outputList);
         }
     }
 }
