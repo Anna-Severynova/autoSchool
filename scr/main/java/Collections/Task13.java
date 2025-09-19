@@ -9,9 +9,9 @@ public class Task13 {
 
         Set<Integer> intSet = new HashSet<>();
 
-        intSet.add(12);
-        intSet.add(20);
-        intSet.add(33);
+        intSet.add(1);
+        intSet.add(2);
+        intSet.add(3);
         intSet.add(4);
         intSet.add(5);
         intSet.add(6);
@@ -33,10 +33,13 @@ public class Task13 {
         Iterator<Integer> iterator = intSet.iterator();
         while (iterator.hasNext()) {
             Integer number = iterator.next();
-            if (number < 10) {
+            if (number > 10) {
                 iterator.remove();
             }
         }
-        System.out.println(intSet);
+
+        for (int num: intSet){
+            System.out.println(num);
+        }
     }
 }
