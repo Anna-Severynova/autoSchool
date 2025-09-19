@@ -28,6 +28,9 @@ public class Task9 {
                 newList.add(str);
             }
         }
-        System.out.println("The string(s) with min symbols: " + newList);
+        System.out.println("The string(s) with min symbols: ");
+        for(String str: newList){
+            System.out.println(str);
+        }
     }
 }
