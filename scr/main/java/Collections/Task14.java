@@ -16,7 +16,7 @@ public class Task14 {
         map.put("Lozova", "Anna");
         map.put("Lozova", "Oksana");
 
-        String name = "Anna";
+        String name = "Lozova";
         int count = 0;
         for (Map.Entry<String, String> i : map.entrySet()) {
             if (i.getValue() == name || i.getKey() == name) {
