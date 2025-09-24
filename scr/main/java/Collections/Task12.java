@@ -1,3 +1,6 @@
+//Task 12.
+//        1) Create a set of strings (Set<String>), put into it 20 words with the letter "L".
+
 package Collections;
 
 import java.util.HashSet;

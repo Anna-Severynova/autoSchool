@@ -1,3 +1,7 @@
+//Task 13.
+//        1) Create a set of numbers (Set<Integer>), put 20 different numbers in it.
+//        2) Remove all numbers greater than 10 from the set.
+
 package Collections;
 
 import java.util.HashSet;

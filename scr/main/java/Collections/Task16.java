@@ -1,3 +1,7 @@
+//Task 16.
+//        1) Create a dictionary (Map<String, String>) and enter ten entries in it according to the principle "last name" - "first name".
+//        2) Delete people who have the same names.
+
 package Collections;
 
 import java.util.*;

@@ -1,3 +1,9 @@
+//Task 7. 5 different lines in the list
+//        1) Create a list of lines.
+//        2) Add 5 different lines to it.
+//        3) Display its size on the screen.
+//        4) Using a loop, display its contents on the screen, each value on a new line
+
 package Collections;
 
 import java.util.ArrayList;

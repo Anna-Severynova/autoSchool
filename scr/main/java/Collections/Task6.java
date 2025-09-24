@@ -1,3 +1,9 @@
+//Task 6. HashMap collection from Object
+//        1) There is a collection HashMap<String, Object>, there are 10 different pairs of objects.
+//        2) Display the contents of the collection on the screen, each element on a new line.
+//        Output example (only one string is shown here):
+//        Sim - 5
+
 package Collections;
 
 import java.util.HashMap;

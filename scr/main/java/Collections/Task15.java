@@ -1,3 +1,7 @@
+//Task 15.
+//        1) Create a dictionary (Map<String, LocalDate>) and enter ten entries into it according to the principle: "last name" - "date of birth".
+//        2) Remove all people born in summer from the dictionary.
+
 package Collections;
 
 import java.time.LocalDate;

@@ -1,3 +1,7 @@
+//Task 4. Display the list of keys
+//        1) There is a collection of HashMap<String, String>, there are 10 different strings.
+//        2) Display the list of keys, each element with a new line.
+
 package Collections;
 
 import java.util.HashMap;

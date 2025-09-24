@@ -1,3 +1,10 @@
+//Task 9. The Shortest line
+//        1) Create a list of strings.
+//        2) Read 5 strings from the keyboard and add them to the list.
+//        3) Using a loop, find the shortest string in the list.
+//        4) Display the found string on the screen.
+//        5) If there are several such lines, print each line from a new line
+
 package Collections;
 
 import java.util.ArrayList;

@@ -1,3 +1,9 @@
+//Task 17.
+//        1) Create a Map dictionary (<String, String>) and add 10 people to it in the form "LastName"-"FirstName".
+//        2) Let there be people with the same first name among these 10 people.
+//        3) Let there be people with the same last names among these 10 people. Note the number of entries in the resulting collection.
+//        4) Display the contents of the Map on the screen.
+
 package Collections;
 
 import java.util.HashMap;

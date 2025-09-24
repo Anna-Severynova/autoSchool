@@ -1,3 +1,7 @@
+//Task 5. Display a list of values
+//        1) There is a collection of HashMap<String, String>, there are 10 different strings.
+//        2) Display a list of values on the screen, each element with a new line.
+
 package Collections;
 
 import java.util.HashMap;

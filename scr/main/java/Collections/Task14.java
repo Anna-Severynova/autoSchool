@@ -1,3 +1,7 @@
+//Task 14.
+//        1) Create a dictionary (Map<String, String>) with ten entries according to the principle "Last Name" - "First Name".
+//        2) Check how many people have the same first or last name as the given one.
+
 package Collections;
 
 import java.util.*;

@@ -1,3 +1,9 @@
+//Task 11. Delete the last line and insert it at the beginning
+//        1) Create a list of strings.
+//        2) Add 5 lines to it from the keyboard.
+//        3) Delete the last line and insert it at the beginning. Repeat 13 times.
+//        4) Using a loop, display the contents on the screen, each value on a new line
+
 package Collections;
 
 import java.util.LinkedList;

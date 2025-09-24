@@ -1,3 +1,9 @@
+//Task 3. HashMap collection of cats
+//        1) There is a Cat class, with a name field (name, String).
+//        2) Create a collection HashMap<String, Cat>.
+//        3) Add 10 cats to the collection, use cat name as a key.
+//        4) Print the result on the screen, each item on a new line.
+
 package Collections;
 
 import java.util.HashMap;

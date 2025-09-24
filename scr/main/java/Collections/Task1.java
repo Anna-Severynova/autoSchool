@@ -1,3 +1,9 @@
+//Task 1.  HashSet from plants
+//        1) Create a HashSet collection with element type String.
+//        2) Add 10 strings to it: watermelon, banana, cherry, pear, melon, blackberry, shen-hen, strawberry, iris, potato.
+//        3) Display the contents of the collection on the screen, each item on a new line.
+//        4) See how the order of the added items has changed.
+
 package Collections;
 
 import java.util.HashSet;
