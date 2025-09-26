@@ -1,0 +1,39 @@
+//Task 12.
+//        1) Create a set of strings (Set<String>), put into it 20 words with the letter "L".
+
+package collectionsPracticalTasks;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Task12 {
+    public static void main(String [] args){
+
+        Set<String> stringSet = new HashSet<>();
+
+        stringSet.add("Luck");
+        stringSet.add("Love");
+        stringSet.add("3_Lost");
+        stringSet.add("3_Lost");
+        stringSet.add("Lock");
+        stringSet.add("Laugh");
+        stringSet.add("Live");
+        stringSet.add("Life");
+        stringSet.add("Lamp");
+        stringSet.add("Look");
+        stringSet.add("Licence");
+        stringSet.add("Like");
+        stringSet.add("Last");
+        stringSet.add("Lama");
+        stringSet.add("Linkedin");
+        stringSet.add("Light");
+        stringSet.add("Length");
+        stringSet.add("Lazy");
+        stringSet.add("Learn");
+        stringSet.add("Level");
+
+        for(String strings : stringSet){
+            System.out.println(strings);
+        }
+    }
+}
