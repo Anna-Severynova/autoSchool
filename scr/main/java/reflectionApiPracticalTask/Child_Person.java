@@ -1,9 +1,12 @@
 package reflectionApiPracticalTask;
 
-public class Test_Child extends Parent {
+public class Child_Person extends Parent {
     private String lastName;
     private String firstName;
 
-    public Test_Child(){};
+    public Child_Person() {
+    }
+
+    ;
 
 }
