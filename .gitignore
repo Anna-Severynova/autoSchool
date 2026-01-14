@@ -1,3 +1,11 @@
-.idea
-out
-.gitignore
+### IntelliJ IDEA ###
+.idea/
+*.iml
+out/
+
+### Maven ###
+target/
+
+### OS ###
+.DS_Store
+Thumbs.db
