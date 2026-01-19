@@ -17,6 +17,7 @@ public class Task1 {
                 .get("https://nghttp2.org/httpbin/spec.json");
         JsonPath jsonPath = response.jsonPath();
         Map<String, Object> keysURL = jsonPath.getMap("paths"); // парсим Json чтобы собрать юрл (ключи)
-        System.out.println(keysURL.keySet());
+        Set<String> endpoints = keysURL.keySet();
+        System.out.println(endpoints);
     }
 }
