@@ -36,20 +36,19 @@ public class Task3 {
         Map<String, Long> mapFinalResult = new HashMap<>();
         return null;
     }
-}
+    private static long findPopulationByLang(String lang) {//нахожу и суммирую популяцию по языку (For each language code get json from https://restcountries.com/v3/lang/[language code]. In the received json, summarize the population values)
 
-private static long findPopulationByLang(String lang) {//нахожу и суммирую популяцию по языку (For each language code get json from https://restcountries.com/v3/lang/[language code]. In the received json, summarize the population values)
-
-    Response response = RestAssured.given()
-            .header("User-Agent", "Learning Automation")
-            .get("https://restcountries.com/v3.1/lang/" + lang);
-    JsonPath jsonPath = response.jsonPath();
-    List<Long> listAllPopulationByLang = jsonPath.getList("population");
-    long sum = 0;
-    for (Long population : listAllPopulationByLang) {
-        population = sum;
-        sum++;
+        Response response = RestAssured.given()
+                .header("User-Agent", "Learning Automation")
+                .get("https://restcountries.com/v3.1/lang/" + lang);
+        JsonPath jsonPath = response.jsonPath();
+        List<Long> listAllPopulationByLang = jsonPath.getList("population");
+        long sum = 0;
+        for (Long population : listAllPopulationByLang) {
+            population = sum;
+            sum = population + sum;
+        }
+        return sum;
     }
-
-    return sum;
 }
+
