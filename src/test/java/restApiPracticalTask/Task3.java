@@ -8,9 +8,15 @@ import java.util.*;
 
 public class Task3 {
     public static void main(String[] args) {
+        System.out.println();
+        System.out.println("Task 3.1: Return the unique languages.");
+        System.out.println();
         System.out.println(setUniqueLangs());
         Set<String> languages = setUniqueLangs();
         Map<String, Long> populations = countPopulationByLang(languages);//в Map сохраняю метод(с арг Сета из уник.яз. Этот метод: проходит по всему Сету уник.языков, и кладет в результирующую Мапу язык + сумму популяции (которую получаем через приватный метод))
+        System.out.println();
+        System.out.println("Task 3.2: Count the sum of populations by languages.");
+        System.out.println();
         System.out.println(populations);
     }
 
