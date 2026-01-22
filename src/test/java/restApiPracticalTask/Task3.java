@@ -9,7 +9,9 @@ import java.util.*;
 public class Task3 {
     public static void main(String[] args) {
         System.out.println(setUniqueLangs());
-        countPopulationByLang(setUniqueLangs());
+        Set<String> languages = setUniqueLangs();
+        Map<String, Long> populations = countPopulationByLang(languages);//в Map сохраняю метод(с арг Сета из уник.яз. Этот метод: проходит по всему Сету уник.языков, и кладет в результирующую Мапу язык + сумму популяции (которую получаем через приватный метод))
+        System.out.println(populations);
     }
 
     public static Set<String> setUniqueLangs() {
@@ -34,21 +36,24 @@ public class Task3 {
 
     public static Map<String, Long> countPopulationByLang(Set<String> langs) {
         Map<String, Long> mapFinalResult = new HashMap<>();
-        return null;
+        for (String lang : langs) {
+            mapFinalResult.put(lang, findPopulationByLang(lang));
+        }
+        return mapFinalResult;
     }
+
     private static long findPopulationByLang(String lang) {//нахожу и суммирую популяцию по языку (For each language code get json from https://restcountries.com/v3/lang/[language code]. In the received json, summarize the population values)
 
         Response response = RestAssured.given()
                 .header("User-Agent", "Learning Automation")
                 .get("https://restcountries.com/v3.1/lang/" + lang);
         JsonPath jsonPath = response.jsonPath();
-        List<Long> listAllPopulationByLang = jsonPath.getList("population");
+        List<Number> listAllPopulationByLang = jsonPath.getList("population");
+
         long sum = 0;
-        for (Long population : listAllPopulationByLang) {
-            population = sum;
-            sum = population + sum;
+        for (Number population : listAllPopulationByLang) {
+            sum = sum + population.longValue();
         }
         return sum;
     }
 }
-
