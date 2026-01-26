@@ -1,6 +1,6 @@
 package jUnit5;
 
-import basicCommandForTesting.UniqueLangs;
+import basicCommandForTesting.task1JUnit.UniqueLangs;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

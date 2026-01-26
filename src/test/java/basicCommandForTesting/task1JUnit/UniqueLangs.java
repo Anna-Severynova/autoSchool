@@ -1,4 +1,4 @@
-package basicCommandForTesting;
+package basicCommandForTesting.task1JUnit;
 
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
