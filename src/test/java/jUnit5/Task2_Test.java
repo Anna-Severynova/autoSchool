@@ -1,59 +1,60 @@
 package jUnit5;
 
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import basicCommandForTesting.task2JUnit.BasicOperations;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Task2_Test {
+    BasicOperations basicOperation = new BasicOperations();
+
+    @BeforeEach
+    void expr(){
+
+    }
+
     @Tag("addition")
     @DisplayName("Test for addition operation")
     @Test
     void addition() {
-        Response response = RestAssured.given()
-                .header("User-Agent", "Learning Automation")
-                .queryParam("expr", "2+2")
-                .get("https://api.mathjs.org/v4/");
-        Double resultAddition = Double.parseDouble(response.asString().trim());
-        assertEquals(4, resultAddition, "2+2 should equal 4");
+        Double expr = basicOperation.basicOperation("5-3");
+        assertEquals(4, basicOperation.basicOperation("2+2"), "2+2 should equal 4");
+        basicOperation.print("2+2: ", expr, " = 4");
     }
 
     @Tag("subtraction")
     @DisplayName("Test for subtraction operation")
     @Test
     void subtraction() {
-        Response response = RestAssured.given()
-                .header("User-Agent", "Learning Automation")
-                .queryParam("expr", "5-3")
-                .get("https://api.mathjs.org/v4/");
-        Double resultSubtraction = Double.parseDouble(response.asString().trim());
-        assertEquals(2, resultSubtraction, "5-3 should equal 2");
+        Double expr = basicOperation.basicOperation("5-3");
+        assertEquals(2, expr, "5-3 should equal 2");
+        basicOperation.print("5-3: ", expr, " = 2");
+    }
+
+    @Tag("multiplication")
+    @DisplayName("Test for multiplication operation")
+    @Test
+    void multiplication() {
+        Double expr = basicOperation.basicOperation("5*5");
+        assertEquals(25, expr, "5*5 should equal 25");
+        basicOperation.print("5*5: ", expr, " = 25");
+    }
+
+    @Tag("division")
+    @DisplayName("Test for division operation")
+    @Test
+    void division() {
+        Double expr = basicOperation.basicOperation("16/4");
+        assertEquals(4, expr, "16/4 should equal 4");
+        basicOperation.print("16/4: ", expr, " = 4");
+    }
+
+    @Tag("square")
+    @DisplayName("Test for square operation")
+    @Test
+    void square() {
+        Double expr = basicOperation.basicOperation("sqrt(25)");
+        assertEquals(5, expr, "sqrt(25) should equal 5");
+        basicOperation.print("sqrt(4): ", expr, " = 5");
     }
 }
-
-//    @Tag("multiplication")
-//    @DisplayName("Test for multiplication operation")
-//    @Test
-//    void multiplication() {
-//
-//    }
-//
-//    @Tag("division")
-//    @DisplayName("Test for division operation")
-//    @Test
-//    void division() {
-//
-//    }
-//
-//    @Tag("square")
-//    @DisplayName("Test for square operation")
-//    @Test
-//    void square() {
-//
-//    }
-//
-//
-//}
