@@ -17,7 +17,7 @@ public class BasicOperations {
         return result;
     }
 
-    public void print(String expr, Double exprResult, String expectedResult) {
-        System.out.println(expr + exprResult + expectedResult);
+    public void print(String expr, String symbols, Double exprResult) {
+        System.out.println(expr + symbols+ exprResult);
     }
 }
