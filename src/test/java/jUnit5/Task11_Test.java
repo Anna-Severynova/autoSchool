@@ -3,7 +3,8 @@ package jUnit5;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.BeforeEach;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
@@ -14,9 +15,14 @@ import java.util.Set;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class Task11_Test {
-    @Test
-    @DisplayName("All endpoints from spec.json should return NON-200 OK")
-    void allEndpointsShouldReturnNON200() {
+
+    private Map<String, Integer> urlAndStatusCode;
+
+    @BeforeEach
+    void basicLogic() {
+
+        urlAndStatusCode = new HashMap<>();
+
         Response response = RestAssured.given()
                 .header("User-Agent", "Learning Automation")
                 .accept("application/json")
@@ -25,11 +31,6 @@ public class Task11_Test {
         Map<String, Object> keysURL = jsonPath.getMap("paths"); // парсим Json чтобы собрать юрл (ключи)
         Set<String> endpoints = keysURL.keySet();
 
-        // создаем цикл, который будет:
-        //   1 - проходить по каждому элементу Set.
-        //   2 - вызывать каждый ендпоинт
-        //   3 - проверять статус код
-        //   4 - если НЕ 200 - сохранять юрл и статус коды в Мапу
         Map<String, Integer> urlAndStatusCode = new HashMap<>();
         for (String endpoint : endpoints) {
             String safeEndpoint = endpoint
@@ -45,8 +46,10 @@ public class Task11_Test {
             }
         }
         System.out.println(urlAndStatusCode);
+    }
 
-        //тестируем, что сохраненные в Map urlAndStatusCode коды !=200
+    @Test
+    void testNON200Codes() {
         for (Integer statusCode : urlAndStatusCode.values()) {
             assertNotEquals(
                     200,
