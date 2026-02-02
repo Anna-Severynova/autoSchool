@@ -17,6 +17,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class Task1LoginLockedUser {
@@ -40,5 +43,18 @@ public class Task1LoginLockedUser {
         loginPage.clickLoginButton();
         WebElement element = driver.findElement(By.className("error-message-container"));
         assertTrue(element.isDisplayed(), "Error message is NOT displayed. The User is NOT on the login page.");
+    }
+
+    @Test
+    @DisplayName("Check that the error message is displayed")
+    @Tag("error_message")
+    public void errorMessageIsDisplayed() {
+        loginPage.enterUserName("locked_out_user");
+        loginPage.enterPassword("secret_sauce");
+        loginPage.clickLoginButton();
+        WebElement element = driver.findElement(By.className("error-message-container"));
+        String actualErrorText = element.getText();
+        String expectedErrorText = "Epic sadface: Sorry, this user has been locked out.";
+        assertEquals(actualErrorText, expectedErrorText, "The error message doesn't meet the requirements or is empty");
     }
 }
