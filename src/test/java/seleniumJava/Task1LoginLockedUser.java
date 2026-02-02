@@ -57,4 +57,16 @@ public class Task1LoginLockedUser {
         String expectedErrorText = "Epic sadface: Sorry, this user has been locked out.";
         assertEquals(actualErrorText, expectedErrorText, "The error message doesn't meet the requirements or is empty");
     }
+
+    @Test
+    @DisplayName("Check that the user can close error message")
+    @Tag("close_error_message")
+    public void closeErrorMessage() {
+        loginPage.enterUserName("locked_out_user");
+        loginPage.enterPassword("secret_sauce");
+        loginPage.clickLoginButton();
+        loginPage.closeErrorMessage();
+        List<WebElement> elements = driver.findElements(By.className("error-button")); // ищем елемент с еррор мессаджем и записываем в массив, чтобы потом проверить что этого элемента нет (массив пустой)
+        assertEquals(0, elements.size(), "Error message is NOT closed");
+    }
 }
