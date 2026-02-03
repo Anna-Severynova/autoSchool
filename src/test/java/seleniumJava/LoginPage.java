@@ -2,6 +2,7 @@ package seleniumJava;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class LoginPage {
@@ -38,17 +39,30 @@ public class LoginPage {
     }
 
     //Task2
-    public void sortingToPrice(){
+    public void sortingToPrice() {
         Select select = new Select(driver.findElement(sortingDropdown)); // Use Select with <select> tag. NO click
         select.selectByValue("lohi");
     }
 
-    public void addItemToCart(){
+    public void addItemToCart() {
         driver.findElement(addSauceLabsBikeLightToCart).click();
     }
 
     //7
-    public void countItemsInCart(){
+    public void clickOnCart() {
         driver.findElement(By.className("shopping_cart_link")).click();
+    }
+
+    //8,9
+    public String getNameItem() {
+        return driver.findElement(By.id("item_0_img_link")).getText();
+    }
+
+    public String getDescribeItem() {
+        return driver.findElement(By.className("inventory_item_desc")).getText();
+    }
+
+    public String getPriceItem() {
+        return driver.findElement(By.className("inventory_item_price")).getText();
     }
 }
