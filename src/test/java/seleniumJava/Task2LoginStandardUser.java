@@ -55,6 +55,7 @@ public class Task2LoginStandardUser {
         assertTrue(element.isDisplayed(), "The User is NOT on the Product List page");
     }
 
+    //5
     @Test
     @DisplayName("Check the sorting to price -> from low to high")
     @Tag("sorting_to_price")
@@ -62,5 +63,15 @@ public class Task2LoginStandardUser {
         loginPage.sortingToPrice();
         Select select = new Select(driver.findElement(By.className("product_sort_container")));
         assertEquals("Price (low to high)", select.getFirstSelectedOption().getText());
+    }
+
+    //6
+    @Test
+    @DisplayName("Check adding an item to the cart.")
+    @Tag("add_item_to_cart")
+    public void testAddItemToCart(){
+        loginPage.addItemToCart();
+        WebElement element = driver.findElement(By.id("remove-sauce-labs-bike-light"));
+        assertTrue(element.isDisplayed(), "The Sauce Labs Bike Light is NOT added to the cart");
     }
 }

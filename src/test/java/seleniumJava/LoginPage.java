@@ -18,6 +18,7 @@ public class LoginPage {
     By loginButton = By.id("login-button");
     By errorMessageButton = By.className("error-button");
     By sortingDropdown = By.className("product_sort_container");
+    By addSauceLabsBikeLightToCart = By.id("add-to-cart-sauce-labs-bike-light");
 
     //Methods to interact with the elements
     public void enterUserName(String strUserName) {
@@ -40,5 +41,9 @@ public class LoginPage {
     public void sortingToPrice(){
         Select select = new Select(driver.findElement(sortingDropdown)); // Use Select with <select> tag. NO click
         select.selectByValue("lohi");
+    }
+
+    public void addItemToCart(){
+        driver.findElement(addSauceLabsBikeLightToCart).click();
     }
 }
