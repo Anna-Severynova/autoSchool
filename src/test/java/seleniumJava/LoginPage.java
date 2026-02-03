@@ -2,6 +2,7 @@ package seleniumJava;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class LoginPage {
     WebDriver driver;
@@ -16,6 +17,7 @@ public class LoginPage {
     By password = By.id("password");
     By loginButton = By.id("login-button");
     By errorMessageButton = By.className("error-button");
+    By sortingDropdown = By.className("product_sort_container");
 
     //Methods to interact with the elements
     public void enterUserName(String strUserName) {
@@ -32,5 +34,11 @@ public class LoginPage {
 
     public void closeErrorMessage() {
         driver.findElement(errorMessageButton).click();
+    }
+
+    //Task2
+    public void sortingToPrice(){
+        Select select = new Select(driver.findElement(sortingDropdown)); // Use Select with <select> tag. NO click
+        select.selectByValue("lohi");
     }
 }
