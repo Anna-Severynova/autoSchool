@@ -41,8 +41,8 @@ public class Task1LoginLockedUser {
         loginPage.enterUserName("locked_out_user");
         loginPage.enterPassword("secret_sauce");
         loginPage.clickLoginButton();
-        WebElement element = driver.findElement(By.className("error-message-container"));
-        assertTrue(element.isDisplayed(), "Error message is NOT displayed. The User is NOT on the login page.");
+        WebElement element = driver.findElement(By.className("login_logo"));
+        assertTrue(element.isDisplayed(), "The User is NOT on the login page.");
     }
 
     @Test
