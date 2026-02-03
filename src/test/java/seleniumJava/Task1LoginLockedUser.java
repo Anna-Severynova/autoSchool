@@ -32,15 +32,15 @@ public class Task1LoginLockedUser {
         driver = new ChromeDriver();
         driver.get("https://www.saucedemo.com/");
         loginPage = new LoginPage(driver);
+        loginPage.enterUserName("locked_out_user");
+        loginPage.enterPassword("secret_sauce");
+        loginPage.clickLoginButton();
     }
 
     @Test
     @DisplayName("Check that locked user cannot log in to the system")
     @Tag("login")
     public void testLogin() {
-        loginPage.enterUserName("locked_out_user");
-        loginPage.enterPassword("secret_sauce");
-        loginPage.clickLoginButton();
         WebElement element = driver.findElement(By.className("login_logo"));
         assertTrue(element.isDisplayed(), "The User is NOT on the login page.");
     }
@@ -49,9 +49,6 @@ public class Task1LoginLockedUser {
     @DisplayName("Check that the error message is displayed")
     @Tag("error_message")
     public void errorMessageIsDisplayed() {
-        loginPage.enterUserName("locked_out_user");
-        loginPage.enterPassword("secret_sauce");
-        loginPage.clickLoginButton();
         WebElement element = driver.findElement(By.className("error-message-container"));
         String actualErrorText = element.getText();
         String expectedErrorText = "Epic sadface: Sorry, this user has been locked out.";
@@ -62,9 +59,6 @@ public class Task1LoginLockedUser {
     @DisplayName("Check that the user can close error message")
     @Tag("close_error_message")
     public void closeErrorMessage() {
-        loginPage.enterUserName("locked_out_user");
-        loginPage.enterPassword("secret_sauce");
-        loginPage.clickLoginButton();
         loginPage.closeErrorMessage();
         List<WebElement> elements = driver.findElements(By.className("error-button")); // ищем елемент с еррор мессаджем и записываем в массив, чтобы потом проверить что этого элемента нет (массив пустой)
         assertEquals(0, elements.size(), "Error message is NOT closed");
