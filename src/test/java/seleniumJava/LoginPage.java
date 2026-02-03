@@ -46,4 +46,9 @@ public class LoginPage {
     public void addItemToCart(){
         driver.findElement(addSauceLabsBikeLightToCart).click();
     }
+
+    //7
+    public void countItemsInCart(){
+        driver.findElement(By.className("shopping_cart_link")).click();
+    }
 }

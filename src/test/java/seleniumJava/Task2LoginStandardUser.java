@@ -47,6 +47,7 @@ public class Task2LoginStandardUser {
         loginPage.clickLoginButton();
     }
 
+    //3
     @Test
     @DisplayName("Check that the User is on the main page")
     @Tag("check_product_list_page")
@@ -69,9 +70,20 @@ public class Task2LoginStandardUser {
     @Test
     @DisplayName("Check adding an item to the cart.")
     @Tag("add_item_to_cart")
-    public void testAddItemToCart(){
+    public void testAddItemToCart() {
         loginPage.addItemToCart();
         WebElement element = driver.findElement(By.id("remove-sauce-labs-bike-light"));
         assertTrue(element.isDisplayed(), "The Sauce Labs Bike Light is NOT added to the cart");
+    }
+
+    //7
+    @Test
+    @DisplayName("Check the count of items in the cart")
+    @Tag("count_items_in_cart")
+    public void testCountItemsInCart() {
+        loginPage.addItemToCart();
+        loginPage.countItemsInCart();
+        WebElement element = driver.findElement(By.className("cart_quantity"));
+        assertEquals("1", element.getText(), "There is NOT 1 item in the cart");
     }
 }
