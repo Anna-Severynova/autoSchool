@@ -55,14 +55,19 @@ public class LoginPage {
 
     //8,9
     public String getNameItem() {
-        return driver.findElement(By.id("item_0_img_link")).getText();
+        return driver.findElement(By.id("item_0_title_link")).getText();
     }
 
     public String getDescribeItem() {
-        return driver.findElement(By.className("inventory_item_desc")).getText();
+        return driver.findElement(By.xpath("//div[@class='inventory_item_name' and text()='Sauce Labs Bike Light']/ancestor::div[@class='inventory_item']//div[@class='inventory_item_desc']")).getText();
     }
 
     public String getPriceItem() {
         return driver.findElement(By.className("inventory_item_price")).getText();
+    }
+
+    //10,11
+    public void clickRemoveItem(){
+        driver.findElement(By.className("btn")).click();
     }
 }

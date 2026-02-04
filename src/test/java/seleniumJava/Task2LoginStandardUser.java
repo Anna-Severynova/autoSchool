@@ -20,15 +20,14 @@
 
 package seleniumJava;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -91,7 +90,7 @@ public class Task2LoginStandardUser {
     @Test
     @DisplayName("Check that the saved data is corresponding to info in the cart")
     @Tag("save_product_data")
-    public void testSaveProductData(){
+    public void testSaveProductData() {
         //add item to cart
         loginPage.addItemToCart();
         //save product data
@@ -111,4 +110,21 @@ public class Task2LoginStandardUser {
         assertEquals(describeItemProdCartPage, describeItemProdListPage, "Product describe is NOT corresponding to product describe in cart");
         assertEquals(priceItemProdCartPage, priceItemProdListPage, "Product price is NOT corresponding to product price in cart");
     }
+
+    //10
+    @Test
+    @DisplayName("Check removing item from cart")
+    @Tag("remove_item")
+    public void testRemoveItem() {
+        loginPage.addItemToCart();
+        loginPage.clickOnCart();
+        loginPage.clickRemoveItem();
+        List<WebElement> elements = driver.findElements(By.className("cart_item_label"));
+        assertEquals(0, elements.size(), "The item is NOT removed");
+    }
+
+//    @AfterEach
+//    public void closeBrowser(){
+//        driver.quit();
+//    }
 }
