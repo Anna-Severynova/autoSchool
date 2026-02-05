@@ -66,4 +66,10 @@ public class ListProductPage {
     public void clickRemoveItem() {
         driver.findElement(removeButton).click();
     }
+
+    //12
+    public void addSauseLabsBackpackItemToCart(){
+        Locators locator = new Locators(driver);
+        locator.addItemToCardByID("add-to-cart-sauce-labs-backpack");
+    }
 }

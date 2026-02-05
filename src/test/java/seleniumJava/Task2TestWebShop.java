@@ -139,6 +139,16 @@ public class Task2TestWebShop {
         assertTrue(element.isDisplayed(), "The User is NOT on Product List page");
     }
 
+    //12 (pass)
+    @Test
+    @DisplayName("Check that the User can add item to cart")
+    @Tag("add_item_to_cart")
+    public void addItemToCart(){
+        listProductPage.addSauseLabsBackpackItemToCart();
+        WebElement element = driver.findElement(By.id("remove-sauce-labs-backpack"));
+        assertTrue(element.isDisplayed(), "The item is NOT added to cart");
+    }
+
 //    @AfterEach
 //    public void closeBrowser(){
 //        driver.quit();
