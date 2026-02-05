@@ -11,7 +11,7 @@ public class Locators {
         this.driver = driver;
     }
 
-    public void addItemToCardByID(String locator){
+    public void clickButtonByID(String locator){
         driver.findElement(By.id(locator)).click();
     }
 

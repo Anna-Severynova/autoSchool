@@ -70,6 +70,6 @@ public class ListProductPage {
     //12
     public void addSauseLabsBackpackItemToCart(){
         Locators locator = new Locators(driver);
-        locator.addItemToCardByID("add-to-cart-sauce-labs-backpack");
+        locator.clickButtonByID("add-to-cart-sauce-labs-backpack");
     }
 }

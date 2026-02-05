@@ -149,6 +149,18 @@ public class Task2TestWebShop {
         assertTrue(element.isDisplayed(), "The item is NOT added to cart");
     }
 
+    //13
+    @Test
+    @DisplayName("Check that User can click the Checkout button")
+    @Tag("click_checkout_button")
+    public  void clickCheckoutButton(){
+        listProductPage.addSauseLabsBackpackItemToCart();
+        listProductPage.clickOnCart();
+        cartProductPage.clickCheckoutButton();
+        WebElement element = driver.findElement(By.id("checkout_info_container"));
+        assertTrue(element.isDisplayed(), "The User is NOT on the Checkout Info page");
+    }
+
 //    @AfterEach
 //    public void closeBrowser(){
 //        driver.quit();

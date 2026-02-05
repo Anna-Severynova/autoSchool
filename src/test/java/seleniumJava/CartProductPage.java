@@ -40,4 +40,10 @@ public class CartProductPage {
     public void clickContinueShopping() {
         driver.findElement(continueShoppingButton).click();
     }
+
+    //13
+    public void clickCheckoutButton(){
+        Locators locators = new Locators(driver);
+        locators.clickButtonByID("checkout");
+    }
 }
