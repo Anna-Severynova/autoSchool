@@ -32,9 +32,11 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class Task2LoginStandardUser {
+public class Task2TestWebShop {
     WebDriver driver;
     LoginPage loginPage;
+    ListProductPage listProductPage;
+    CartProductPage cartProductPage;
 
     @BeforeEach
     public void setUp() {
@@ -44,9 +46,11 @@ public class Task2LoginStandardUser {
         loginPage.enterUserName("standard_user");
         loginPage.enterPassword("secret_sauce");
         loginPage.clickLoginButton();
+        listProductPage = new ListProductPage(driver);
+        cartProductPage = new CartProductPage(driver);
     }
 
-    //3
+    //3 (pass)
     @Test
     @DisplayName("Check that the User is on the main page")
     @Tag("check_product_list_page")
@@ -55,33 +59,33 @@ public class Task2LoginStandardUser {
         assertTrue(element.isDisplayed(), "The User is NOT on the Product List page");
     }
 
-    //5
+    //5 (pass)
     @Test
     @DisplayName("Check the sorting to price -> from low to high")
     @Tag("sorting_to_price")
     public void testSortingToPrice() {
-        loginPage.sortingToPrice();
+        listProductPage.sortingToPrice();
         Select select = new Select(driver.findElement(By.className("product_sort_container")));
         assertEquals("Price (low to high)", select.getFirstSelectedOption().getText());
     }
 
-    //6
+    //6 (pass)
     @Test
     @DisplayName("Check adding an item to the cart.")
     @Tag("add_item_to_cart")
     public void testAddItemToCart() {
-        loginPage.addItemToCart();
+        listProductPage.addItemToCart();
         WebElement element = driver.findElement(By.id("remove-sauce-labs-bike-light"));
         assertTrue(element.isDisplayed(), "The Sauce Labs Bike Light is NOT added to the cart");
     }
 
-    //7
+    //7 (pass)
     @Test
     @DisplayName("Check the count of items in the cart")
     @Tag("count_items_in_cart")
     public void testCountItemsInCart() {
-        loginPage.addItemToCart();
-        loginPage.clickOnCart();
+        listProductPage.addItemToCart();
+        listProductPage.clickOnCart();
         WebElement element = driver.findElement(By.className("cart_quantity"));
         assertEquals("1", element.getText(), "There is NOT 1 item in the cart");
     }
@@ -92,18 +96,18 @@ public class Task2LoginStandardUser {
     @Tag("save_product_data")
     public void testSaveProductData() {
         //add item to cart
-        loginPage.addItemToCart();
+        listProductPage.addItemToCart();
         //save product data
-        String nameItemProdListPage = loginPage.getNameItem();
+        String nameItemProdListPage = listProductPage.getNameItem();
         String countItemProdListPage = "1";
-        String describeItemProdListPage = loginPage.getDescribeItem();
-        String priceItemProdListPage = loginPage.getPriceItem();
+        String describeItemProdListPage = listProductPage.getDesc();
+        String priceItemProdListPage = listProductPage.getPriceItem();
         //go to cart and compare
-        loginPage.clickOnCart();
-        String nameItemProdCartPage = loginPage.getNameItem();
+        listProductPage.clickOnCart();
+        String nameItemProdCartPage = cartProductPage.getNameItem();
         String countItemProdCartPage = "1";
-        String describeItemProdCartPage = loginPage.getDescribeItem();
-        String priceItemProdCartPage = loginPage.getPriceItem();
+        String describeItemProdCartPage = cartProductPage.getDescribeItem();
+        String priceItemProdCartPage = cartProductPage.getPriceItem();
         //compare
         assertEquals(nameItemProdCartPage, nameItemProdListPage, "Product name is NOT corresponding to product name in cart");
         assertEquals(countItemProdCartPage, countItemProdListPage, "Count of product is NOT corresponding to count of product in cart");
@@ -111,16 +115,28 @@ public class Task2LoginStandardUser {
         assertEquals(priceItemProdCartPage, priceItemProdListPage, "Product price is NOT corresponding to product price in cart");
     }
 
-    //10
+    //10 (pass)
     @Test
     @DisplayName("Check removing item from cart")
     @Tag("remove_item")
     public void testRemoveItem() {
-        loginPage.addItemToCart();
-        loginPage.clickOnCart();
-        loginPage.clickRemoveItem();
+        listProductPage.addItemToCart();
+        listProductPage.clickOnCart();
+        cartProductPage.clickRemoveItem();
         List<WebElement> elements = driver.findElements(By.className("cart_item_label"));
         assertEquals(0, elements.size(), "The item is NOT removed");
+    }
+
+    //11 (pass)
+    @Test
+    @DisplayName("Check that User can continue shopping")
+    @Tag("continue_shopping_button")
+    public void testContinueShoppingButton(){
+        listProductPage.addItemToCart();
+        listProductPage.clickOnCart();
+        cartProductPage.clickContinueShopping();
+        WebElement element = driver.findElement(By.className("select_container"));
+        assertTrue(element.isDisplayed(), "The User is NOT on Product List page");
     }
 
 //    @AfterEach
