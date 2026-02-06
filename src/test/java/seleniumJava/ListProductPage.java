@@ -21,6 +21,7 @@ public class ListProductPage {
     By productName = By.id("item_0_title_link");
     By productDesc = By.className("inventory_item_desc");
     By productPrice = By.className("inventory_item_price");
+
     By removeButton = By.className("btn");
 
     //Task2

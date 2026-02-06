@@ -15,6 +15,7 @@ public class CartProductPage {
     //Locators
     By productName = By.id("item_0_title_link");
     By productDesc = By.className("inventory_item_desc");
+    By productCount = By.className("cart_quantity");
     By productPrice = By.className("inventory_item_price");
     By removeButton = By.className("btn");
     By continueShoppingButton = By.id("continue-shopping");
@@ -30,6 +31,10 @@ public class CartProductPage {
 
     public String getPriceItem() {
         return driver.findElement(productPrice).getText();
+    }
+
+    public String getCountItem() {
+        return driver.findElement(productCount).getText();
     }
 
     //10

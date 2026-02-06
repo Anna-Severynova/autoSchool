@@ -38,6 +38,7 @@ public class Task2TestWebShop {
     ListProductPage listProductPage;
     CartProductPage cartProductPage;
     CheckoutPage checkoutPage;
+    FinishPage finishPage;
 
     @BeforeEach
     public void setUp() {
@@ -50,6 +51,7 @@ public class Task2TestWebShop {
         listProductPage = new ListProductPage(driver);
         cartProductPage = new CartProductPage(driver);
         checkoutPage = new CheckoutPage(driver);
+        finishPage = new FinishPage(driver);
     }
 
 //    @AfterEach
@@ -97,30 +99,30 @@ public class Task2TestWebShop {
         assertEquals("1", element.getText(), "There is NOT 1 item in the cart");
     }
 
-//    //8 (получить данные со страницы product list -> сохранить в переменную product cart -> сравнить),9
-//    @Test
-//    @DisplayName("Check that the saved data is corresponding to info in the cart")
-//    @Tag("save_product_data")
-//    public void testSaveProductData() {
-//        //add item to cart
-//        listProductPage.addItemToCart();
-//        //save product data
-//        String nameItemProdListPage = listProductPage.getNameItem();
-//        String countItemProdListPage = "1";
-//        String describeItemProdListPage = listProductPage.getDesc();
-//        String priceItemProdListPage = listProductPage.getPriceItem();
-//        //go to cart and compare
-//        listProductPage.clickOnCart();
-//        String nameItemProdCartPage = cartProductPage.getNameItem();
-//        String countItemProdCartPage = "1";
-//        String describeItemProdCartPage = cartProductPage.getDescribeItem();
-//        String priceItemProdCartPage = cartProductPage.getPriceItem();
-//        //compare
-//        assertEquals(nameItemProdCartPage, nameItemProdListPage, "Product name is NOT corresponding to product name in cart");
-//        assertEquals(countItemProdCartPage, countItemProdListPage, "Count of product is NOT corresponding to count of product in cart");
-//        assertEquals(describeItemProdCartPage, describeItemProdListPage, "Product describe is NOT corresponding to product describe in cart");
-//        assertEquals(priceItemProdCartPage, priceItemProdListPage, "Product price is NOT corresponding to product price in cart");
-//    }
+    //8 (получить данные со страницы product list -> сохранить в переменную product cart -> сравнить),9
+    @Test
+    @DisplayName("Check that the saved data is corresponding to info in the cart")
+    @Tag("save_product_data")
+    public void testSaveProductData() {
+        //add item to cart
+        listProductPage.addItemToCart();
+        //save product data
+        String nameProdListPage = listProductPage.getNameItem();
+        String countProdListPage = "1";
+        String describeProdListPage = listProductPage.getDesc();
+        String priceProdListPage = listProductPage.getPriceItem();
+        //go to cart and compare
+        listProductPage.clickOnCart();
+        String nameProdCartPage = cartProductPage.getNameItem();
+        String countProdCartPage = "1";
+        String describeProdCartPage = cartProductPage.getDescribeItem();
+        String priceProdCartPage = cartProductPage.getPriceItem();
+        //compare
+        assertEquals(nameProdCartPage, nameProdListPage, "Product name is NOT corresponding to product name in cart");
+        assertEquals(countProdCartPage, countProdListPage, "Count of product is NOT corresponding to count of product in cart");
+        assertEquals(describeProdCartPage, describeProdListPage, "Product describe is NOT corresponding to product describe in cart");
+        assertEquals(priceProdCartPage, priceProdListPage, "Product price is NOT corresponding to product price in cart");
+    }
 
     //10 (pass)
     @Test
@@ -146,39 +148,21 @@ public class Task2TestWebShop {
         assertTrue(element.isDisplayed(), "The User is NOT on Product List page");
     }
 
-    //12 (pass)
+    //12,13,14,15 - pass
     @Test
-    @DisplayName("Check that the User can add item to cart")
+    @DisplayName("Check that the item count on the Cart Page meet to item count on Finish Page")
     @Tag("add_item_to_cart")
     public void addItemToCart() {
         listProductPage.addSauseLabsBackpackItemToCart();
         WebElement element = driver.findElement(By.id("remove-sauce-labs-backpack"));
         assertTrue(element.isDisplayed(), "The item is NOT added to cart");
-    }
-
-    //13 pass
-    @Test
-    @DisplayName("Check that User can click the Checkout button")
-    @Tag("click_checkout_button")
-    public void clickCheckoutButton() {
-        listProductPage.addSauseLabsBackpackItemToCart();
         listProductPage.clickOnCart();
-        cartProductPage.clickCheckoutButton();
-        WebElement element = driver.findElement(By.id("checkout_info_container"));
-        assertTrue(element.isDisplayed(), "The User is NOT on the Checkout Info page");
-    }
-
-    //14 pass
-    @Test
-    @DisplayName("Check the User can fill the Checkout form and send it")
-    @Tag("fill_and_send_checkout_form")
-    public void fillAndSendCheckoutForm() {
-        listProductPage.addSauseLabsBackpackItemToCart();
-        listProductPage.clickOnCart();
+        cartProductPage.getCountItem();
+        String saveItemCart = cartProductPage.getCountItem();
         cartProductPage.clickCheckoutButton();
         checkoutPage.fillAndSendCheckoutInfo();
         checkoutPage.clickContinueCheckoutButton();
-        WebElement element = driver.findElement(By.id("finish"));
-        assertTrue(element.isDisplayed(), "The user is NOT on the finish page");
+        String itemFinishPage = finishPage.getCountItem();
+        assertEquals(saveItemCart, itemFinishPage, "Count on Cart page doesn't meet to count on Finish page");
     }
 }
