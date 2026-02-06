@@ -17,4 +17,9 @@ public class FinishPage {
     public String getCountItem() {
         return driver.findElement(productCount).getText();
     }
+
+    public void clickFinishButton(){
+        Locators locator = new Locators(driver);
+        locator.clickButtonByID("finish");
+    }
 }

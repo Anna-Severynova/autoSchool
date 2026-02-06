@@ -148,7 +148,7 @@ public class Task2TestWebShop {
         assertTrue(element.isDisplayed(), "The User is NOT on Product List page");
     }
 
-    //12,13,14,15 - pass
+    //12,13,14,15,16,17 - pass
     @Test
     @DisplayName("Check that the item count on the Cart Page meet to item count on Finish Page")
     @Tag("add_item_to_cart")
@@ -164,5 +164,8 @@ public class Task2TestWebShop {
         checkoutPage.clickContinueCheckoutButton();
         String itemFinishPage = finishPage.getCountItem();
         assertEquals(saveItemCart, itemFinishPage, "Count on Cart page doesn't meet to count on Finish page");
+        finishPage.clickFinishButton();
+        WebElement element1 = driver.findElement(By.className("pony_express"));
+        assertTrue(element1.isDisplayed(), "The user does NOT finish the order");
     }
 }
